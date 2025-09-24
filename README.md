@@ -1,6 +1,6 @@
-# MEN Stack Starter Template with Session Authentication
+# Plan Pop
 
-Welcome to the MEN Stack Starter Template! This template provides a foundational setup for building web applications using MongoDB, Express.js, and Node.js, complete with session authentication. This is ideal for students looking to kickstart their development projects.
+![logo](./assets/PlanPopLogo.png)
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
