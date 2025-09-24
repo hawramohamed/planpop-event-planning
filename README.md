@@ -41,8 +41,9 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
     /users/:userId/events/:eventId	PUT (update)
     /users/:userId/events/:eventId	DEL (delete)
 
-<strong>Wire Frames</strong>
-<img src="./assets/Picture1.png"/> <img src="./assets/Picture2.png" />
+<strong>Wire Frames</strong><br>
+<img src="./assets/Picture1.png"/><br>
+ <img src="./assets/Picture2.png" /><br>
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
