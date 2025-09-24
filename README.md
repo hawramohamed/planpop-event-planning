@@ -45,7 +45,12 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 <strong>Wire Frames</strong><br>
 <br>
 <img src="./assets/Picture1.png"/><br>
- <img src="./assets/Picture2.png" /><br>
+<img src="./assets/Picture2.png" /><br>
+
+<strong> Entity Relationship Diagram </strong><br>
+<br>
+<img src="./assets/CRUDAPPproject.drawio (2).png" />
+
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
