@@ -7,7 +7,7 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 
 ## Table of Contents
 - [Features](#features)
-
+- [Planning](#planning)
 - [License](#license)
 
 ## Features
@@ -20,7 +20,7 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 - Basic authentication flow
 
 ## Planning 
-  <bold> User Stories </bold>
+  <strong> User Stories </strong>
   - As a User (AAU), I want to sign up for an account and sign in, so that I can access my event dashboard and manage my plans.
   - AAU, I want an easy and consistent way to navigate through the site, whether I am signed in or not. I need to quickly access options to sign up, sign in, view my events, or sign out, depending on my current status.
   - AAU, I need a dedicated page to view all events I’ve created, to easily manage and review my upcoming plans.
@@ -32,7 +32,17 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
   - AAU, I am interested in viewing a list of all other app users, to foster a sense of community and exchange planning ideas.
   - AAU, I want the option to click on another user’s profile and view all of their public events and checklists, to get inspiration for my own planning.
 
+  <strong>Routes</strong>
+    /users/:userId/events	GET (index)
+    /users/:userId/events/new	GET (new)
+    /users/:userId/events	POST (create)
+    /users/:userId/events/:eventId	GET (show)
+    /users/:userId/events/:eventId/edit	GET (edit)
+    /users/:userId/events/:eventId	PUT (update)
+    /users/:userId/events/:eventId	DEL (delete)
 
+<strong>Wire Frames</strong>
+<img src="./assets/Picture1.png"/> <img src="./assets/Picture2.png" />
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
