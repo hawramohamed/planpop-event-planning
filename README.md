@@ -32,16 +32,18 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
   - AAU, I am interested in viewing a list of all other app users, to foster a sense of community and exchange planning ideas.
   - AAU, I want the option to click on another user’s profile and view all of their public events and checklists, to get inspiration for my own planning.
 
-  <strong>Routes</strong>
-    /users/:userId/events	GET (index)
-    /users/:userId/events/new	GET (new)
-    /users/:userId/events	POST (create)
-    /users/:userId/events/:eventId	GET (show)
-    /users/:userId/events/:eventId/edit	GET (edit)
-    /users/:userId/events/:eventId	PUT (update)
-    /users/:userId/events/:eventId	DEL (delete)
+  <strong>Routes</strong><br>
+  <br>
+    /users/:userId/events	GET (index)<br>
+    /users/:userId/events/new	GET (new)<br>
+    /users/:userId/events	POST (create)<br>
+    /users/:userId/events/:eventId	GET (show)<br>
+    /users/:userId/events/:eventId/edit	GET (edit)<br>
+    /users/:userId/events/:eventId	PUT (update)<br>
+    /users/:userId/events/:eventId	DEL (delete)<br>
 
 <strong>Wire Frames</strong><br>
+<br>
 <img src="./assets/Picture1.png"/><br>
  <img src="./assets/Picture2.png" /><br>
 ## License
