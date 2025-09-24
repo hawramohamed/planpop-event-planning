@@ -7,6 +7,10 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 
 ## Table of Contents
 - [Features](#features)
+- [Getting Started](#getting-started)
+- [Attributions](#attributions)
+- [Technologies Used](#technologies-used)
+- [Next Steps](#next-steps)
 - [Planning](#planning)
 - [License](#license)
 
@@ -18,6 +22,18 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 - Basic user model setup
 - Middleware for templates and authorization
 - Basic authentication flow
+
+## Getting Started
+
+
+## Attributions
+
+
+## Technologies Used
+
+
+## Next Steps
+
 
 ## Planning 
   <strong> User Stories </strong>
