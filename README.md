@@ -6,55 +6,9 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 
 
 ## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Clone the Repository](#clone-the-repository)
-- [Installation](#installation)
-- [Environment Setup](#environment-setup)
-- [Running the Application](#running-the-application)
-- [Removing Git and Creating Your Own Repo](#removing-git-and-creating-your-own-repo)
 - [Features](#features)
-- [Contributing](#contributing)
+
 - [License](#license)
-
-## Prerequisites
-
-
-## Clone the Repository
-
-
-
-
-## Removing Git and Creating Your Own Repo
-To remove the existing Git history and create your own repository:
-
-1. Remove the existing .git folder:
-  ```bash
-  rm -rf .git
-  ```
-2. Initialize a new Git repository:
-  ```bash
-  git init
-  ```
-3. Add all files to the new repository:
-  ```bash
-  git add .
-  ```
-4. Commit the changes
-   ```bash
-   git commit -m "Initial commit"
-   ``` 
-5. Create a new repository on GitHub (or any other platform) and follow the instructions to push your local repository.
-  Make a new repository on [GitHub](https://github.com/) named `<your-project-name>`
-  Now link your local project to your remote GitHub repo:
-  ```bash
-  git remote add origin https://github.com/<github-username>/YOUR_APP_NAME.git
-  git push origin main
-  ```
-
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
-
-## Running the application
-
 
 ## Features
 - User registration and login with session management
@@ -64,6 +18,20 @@ To remove the existing Git history and create your own repository:
 - Basic user model setup
 - Middleware for templates and authorization
 - Basic authentication flow
+
+## Planning 
+  <bold> User Stories </bold>
+  - As a User (AAU), I want to sign up for an account and sign in, so that I can access my event dashboard and manage my plans.
+  - AAU, I want an easy and consistent way to navigate through the site, whether I am signed in or not. I need to quickly access options to sign up, sign in, view my events, or sign out, depending on my current status.
+  - AAU, I need a dedicated page to view all events I’ve created, to easily manage and review my upcoming plans.
+  - AAU, I want to easily find and click on an ‘Add New Event’ link, which takes me to a form for creating a new event with details like title, date, location, and description.
+  - AAU, after filling out the event form, I want to submit it and receive confirmation that the event has been saved to my dashboard.
+  - AAU, I need the ability to edit and delete events I’ve created, allowing me full control over managing my schedule.
+  - AAU, I want to add checklist items to each event, so I can track tasks and preparation steps.
+  - AAU, I want to mark checklist items as complete, so I can monitor my progress and stay organized.
+  - AAU, I am interested in viewing a list of all other app users, to foster a sense of community and exchange planning ideas.
+  - AAU, I want the option to click on another user’s profile and view all of their public events and checklists, to get inspiration for my own planning.
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
