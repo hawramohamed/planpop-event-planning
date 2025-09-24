@@ -1,6 +1,8 @@
 
 ![logo](./assets/PlanPopLogo.png)
-# Plan Pop
+# Welcome to PlanPop — Your Personal Event Planning Hub
+PlanPop makes organizing events simple, stylish, and stress-free. Whether you're hosting a birthday, study session, team meetup, or weekend hangout, PlanPop helps you create, track, and share your plans with ease. Build your own event dashboard, manage tasks with interactive checklists, and explore public events for inspiration. Sign up today and start planning with purpose!
+
 
 
 ## Table of Contents
@@ -16,37 +18,11 @@
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed on your machine:
-- [Node.js](https://nodejs.org/) (LTS or later)
-- [MongoDB](https://www.mongodb.com/) (make sure it's running)
-- [Git](https://git-scm.com/) (for cloning the repository)
 
 ## Clone the Repository
 
-To clone this repository, open your terminal and run:
 
-```bash
-git clone https://github.com/SEB-PT-6-Solutions/men-stack-session-auth-template.git YOUR_APP_NAME_HERE
-```
 
-## Installation
-Navigate into the cloned directory:
-```bash
-cd YOUR_APP_NAME
-```
-
-Then, install the necessary dependencies:
-
-```bash
-npm i
-```
-
-## Environment Setup
-```plaintext
-MONGODB_URI=atlas_db_uri
-SESSION_SECRET=your_secret_key
-```
-Replace `atlas_db_uri` with your desired database name and `your_secret_key` with a secure key.
 
 ## Removing Git and Creating Your Own Repo
 To remove the existing Git history and create your own repository:
@@ -78,9 +54,7 @@ To remove the existing Git history and create your own repository:
 > 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
 
 ## Running the application
-```bash
-npm run dev
-```
+
 
 ## Features
 - User registration and login with session management
@@ -94,4 +68,4 @@ npm run dev
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Happy Coding!
+
