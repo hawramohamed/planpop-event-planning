@@ -1,6 +1,7 @@
-# Plan Pop
 
 ![logo](./assets/PlanPopLogo.png)
+# Plan Pop
+
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
