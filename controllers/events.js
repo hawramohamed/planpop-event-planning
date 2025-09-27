@@ -6,6 +6,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 //router logic
+//index
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -17,4 +18,12 @@ router.get('/', async (req, res) => {
   };
 });
 
+//form
+router.get('/new', (req, res) => {
+  try{
+    res.render('events/new.ejs')
+  } catch (error){
+    console.log(error);
+  };
+});
 module.exports = router;
