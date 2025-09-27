@@ -9,14 +9,12 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const eventsItems = currentUser.pantry;
+    const eventsItems = currentUser.events;
 
-    res.render('events/index.ejs', {events: eventsItems});
-  } catch (error){
+    res.render('events/index.ejs', {events: eventsItems});  } catch (error){
     console.log(error);
     res.redirect('/');
   };
 });
-
 
 module.exports = router;

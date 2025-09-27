@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Pantry</title>
+    <title>My Events</title>
   </head>
   <body>
+    <%- include('../partials/_navbar.ejs') %> 
     <h1>Welcome to My Events</h1>
     <% if (events.length > 0){ %>
         <ul>
@@ -14,10 +15,10 @@
                     (event due on <%= item.expiration.toDateString() %>)
                     <% if (item.notes) { %> — <em><%= item.notes %></em><% } %>
                     
-                    <a href="/users/<%= user._id %>/foods/<%= item._id %>/edit">Edit</a>
+                    <a href="/users/<%= user._id %>/events/<%= item._id %>/edit">Edit</a>
 
 
-                    <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <form action="/users/<%= user._id %>/events/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
                      <button type="submit">Delete</button>
                     </form>
 
