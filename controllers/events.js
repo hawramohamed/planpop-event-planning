@@ -19,11 +19,42 @@ router.get('/', async (req, res) => {
 });
 
 //form
-router.get('/new', (req, res) => {
+router.get('/new', async (req, res) => {
   try{
-    res.render('events/new.ejs')
+    const currentUser = await User.findById(req.session.user._id);
+    res.render('events/new.ejs', { user: currentUser });
   } catch (error){
     console.log(error);
+    res.redirect('/');
   };
 });
+
+//post form
+router.post('/', async (req, res) =>{
+  try{
+    const currentUser = await User.findById(req.session.user._id);
+    const checklistArray = Array.isArray(req.body.checklist) ? req.body.checklist.map(item => ({
+      task: item.task,
+      isDone: item.isDone === 'true'
+    }))
+    : [];
+
+    const newEvent = {
+      title: req.body.title,
+      date: req.body.date,
+      location: req.body.location,
+      isPublic: req.body.isPublic === 'true',
+      checklist: checklistArray
+    };
+
+    currentUser.events.push(newEvent);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/events`);
+
+  } catch(error){
+    console.log(error);
+    res.redirect('/');
+  };
+});
+
 module.exports = router;

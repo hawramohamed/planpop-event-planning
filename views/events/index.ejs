@@ -11,25 +11,37 @@
     <% if (events.length > 0){ %>
         <ul>
            <% events.forEach(item => { %>
-                <li><%= item.name %> - <%= item.quantity %> <%= item.unit %>
-                    (event due on <%= item.expiration.toDateString() %>)
-                    <% if (item.notes) { %> — <em><%= item.notes %></em><% } %>
-                    
-                    <a href="/users/<%= user._id %>/events/<%= item._id %>/edit">Edit</a>
+                  <li>
+        <strong><%= item.title %></strong> — <%= item.location %><br/>
+        Date: <%= item.date ? item.date.toDateString() : 'No date set' %><br/>
+        Public: <%= item.isPublic ? 'Yes' : 'No' %><br/>
 
+        <% if (item.checklist && item.checklist.length > 0) { %>
+          <ul>
+            <% item.checklist.forEach(items => { %>
+              <li>
+                <%= items.task %> — <%= items.isDone ? 'Done' : 'Pending' %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <em>No checklist items</em>
+        <% } %>
 
-                    <form action="/users/<%= user._id %>/events/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
-                     <button type="submit">Delete</button>
-                    </form>
+        <a href="/users/<%= user._id %>/events/<%= item._id %>/edit">Edit</a>
 
-                </li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>There are no events created.</p>
-    <% }; %>
+        <form action="/users/<%= user._id %>/events/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>There are no events created.</p>
+<% } %>
 
-    <a href = "events/new"> Create new event</a>
+<a href="/users/<%= user._id %>/events/new">Create new event</a>
+
     
-  </body>
+</body>
 </html>
