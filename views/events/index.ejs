@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pantry</title>
+  </head>
+  <body>
+    <h1>Welcome to My Events</h1>
+    <% if (events.length > 0){ %>
+        <ul>
+           <% events.forEach(item => { %>
+                <li><%= item.name %> - <%= item.quantity %> <%= item.unit %>
+                    (event due on <%= item.expiration.toDateString() %>)
+                    <% if (item.notes) { %> — <em><%= item.notes %></em><% } %>
+                    
+                    <a href="/users/<%= user._id %>/foods/<%= item._id %>/edit">Edit</a>
+
+
+                    <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
+                     <button type="submit">Delete</button>
+                    </form>
+
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>There are no items in this pantry.</p>
+    <% }; %>
+    
+  </body>
+</html>
