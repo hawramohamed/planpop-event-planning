@@ -29,9 +29,9 @@
     <div id="checklist-container">
       <div class="checklist-group">
         <label>Task:</label>
-        <input type="text" name="checklist[0][task]" required />
+        <input type="text" name="taskList" id="checklist[0][task]" required />
         <label>Is Done?</label>
-        <select name="checklist[0][isDone]">
+        <select name="isDoneList" id="checklist[0][isDone]">
           <option value="false" selected>No</option>
           <option value="true">Yes</option>
         </select>
@@ -52,9 +52,9 @@
       group.className = 'checklist-group';
       group.innerHTML = `
         <label>Task:</label>
-        <input type="text" name="checklist[${checklistIndex}][task]" required />
+        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" required />
         <label>Is Done?</label>
-        <select name="checklist[${checklistIndex}][isDone]">
+        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]">
           <option value="false" selected>No</option>
           <option value="true">Yes</option>
         </select>
