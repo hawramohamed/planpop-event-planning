@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing <%= event.title %> </title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Create a New Event</h1>
+    <form action="/users/<%= user._id %>/events" method="POST">
+    <label for="title">Event Title:</label>
+    <input type="text" name="title" id="title" value=required />
+
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required />
+
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" required />
+
+    <label for="isPublic">Make this event public?</label>
+    <select name="isPublic" id="isPublic" required>
+        <option value="true"> Yes</option>
+        <option value="false">No</option>
+    </select>
+
+    <h3>Checklist Item </h3>
+
+    <div id="checklist-container">
+      <div class="checklist-group">
+        <label>Task:</label>
+        <input type="text" name="taskList" id="checklist[0][task]" required />
+        <label>Is Done?</label>
+        <select name="isDoneList" id="checklist[0][isDone]">
+          <option value="false" selected>No</option>
+          <option value="true">Yes</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" onclick="addChecklistItem()">+ Add Another Task</button>
+
+    <button type="submit">Save Item</button>
+</form>
+
+<!-- to dynamically add fields in checklist-->
+<script>
+    let checklistIndex = 1;
+
+    function addChecklistItem() {
+      const container = document.getElementById('checklist-container');
+      const group = document.createElement('div');
+      group.className = 'checklist-group';
+      group.innerHTML = `
+        <label>Task:</label>
+        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" required />
+        <label>Is Done?</label>
+        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]">
+          <option value="false" selected>No</option>
+          <option value="true">Yes</option>
+        </select>
+      `;
+      container.appendChild(group);
+      checklistIndex++;
+    }
+  </script>
+
+</body>   
+</html>
