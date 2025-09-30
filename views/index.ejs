@@ -10,11 +10,13 @@
 <%- include('./partials/_navbar.ejs') %> 
 <% if (user) { %>
 <h1>Welcome to PlanPop, <%= user.username %>!</h1>
+<p>Your space to plan, polish, and pop off with unforgettable events.</p>
 <p>
   <a href="/auth/sign-out">Sign out</a>
 </p>
 <% } else { %>
-<h1>Welcome to the app, guest.</h1>
+<h1>Welcome to PlanPop, guest.</h1>
+<p>Your personal event planner with a pop of personality.</p>
 <p>
   <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">Sign in</a>.
 </p>
