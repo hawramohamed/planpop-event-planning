@@ -38,12 +38,26 @@ router.post('/', async (req, res) =>{
     
     console.log(req.body.taskList);
     console.log(req.body.isDoneList);
-    const checklistArray = Array.isArray(taskList) ? taskList.map((task, idx) => ({
-      task,
-      isDone: isDoneList[idx] === 'yes'
-    }))
-    : [];
 
+    // first check if there is a task
+    let checklistArray = []
+
+
+    if (Array.isArray(taskList)) {
+      checklistArray = taskList.map((task, idx) => ({
+        task,
+        isDone: isDoneList[idx] === 'true'
+      }))
+    } else if(checklistArray && isDoneList){
+      // edge case, when only 1 task is submitted
+      checklistArray = [{
+        task: taskList,
+        isDone: isDoneList
+      }]
+    }
+
+
+    
     console.log(checklistArray)
     const newEvent = {
       title: req.body.title,
@@ -79,6 +93,20 @@ router.delete('/:eventId', async (req, res) => {
     // If any errors, log them and redirect back home
     console.log(error);
     res.redirect('/');
+  }
+});
+
+//editing the event
+router.get('/:eventId/edit', async (req, res) => {
+  try{
+    const currentUser = await User.findById(req.session.user._id);
+    const event = currentUser.events.id(req.params.eventId);
+    res.render('events/edit.ejs', {
+      event: event,
+    });
+  } catch (error){
+    console.log(error);
+    res.redirect('/')
   }
 });
 

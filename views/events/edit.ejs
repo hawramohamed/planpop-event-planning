@@ -7,21 +7,26 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Create a New Event</h1>
-    <form action="/users/<%= user._id %>/events" method="POST">
+    <h1>Edit event.title </h1>
+    <form action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT" method="POST">
     <label for="title">Event Title:</label>
-    <input type="text" name="title" id="title" value=required />
+    <input type="text" name="title" id="title" value="<%= event.title %>" required />
 
     <label for="date">Date:</label>
-    <input type="date" name="date" id="date" required />
+    <input type="text" name="date" id="date" value="<%= event.date %>" required />
 
     <label for="location">Location:</label>
-    <input type="text" name="location" id="location" required />
+    <input type="text" name="location" id="location" value="<%= event.location %>" required />
 
     <label for="isPublic">Make this event public?</label>
-    <select name="isPublic" id="isPublic" required>
-        <option value="true"> Yes</option>
-        <option value="false">No</option>
+    <select name="isPublic" id="isPublic" value="<%= event.isPublic %>"required>
+          <% if (!event.isPublic) { %>
+          <option value="false" selected>No</option>
+          <option value="true">Yes</option>
+          <% } else { %>
+          <option value="false">No</option>
+          <option value="true" selected>Yes</option>
+          <% } %>
     </select>
 
     <h3>Checklist Item </h3>
@@ -29,17 +34,22 @@
     <div id="checklist-container">
       <div class="checklist-group">
         <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[0][task]" required />
+        <input type="text" name="taskList" id="checklist[0][task]" value="<%= event.taskList %>" required />
         <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[0][isDone]">
+        <select name="isDoneList" id="checklist[0][isDone]" value="<%= event.isDoneList %>">
+          <% if (!event.isDone) { %>
           <option value="false" selected>No</option>
           <option value="true">Yes</option>
+          <% } else { %>
+          <option value="false">No</option>
+          <option value="true" selected>Yes</option>
+          <% } %>
         </select>
       </div>
     </div>
     <button type="button" onclick="addChecklistItem()">+ Add Another Task</button>
 
-    <button type="submit">Save Item</button>
+    <button type="submit">Save Edited Event</button>
 </form>
 
 <!-- to dynamically add fields in checklist-->
@@ -52,9 +62,9 @@
       group.className = 'checklist-group';
       group.innerHTML = `
         <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" required />
+        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" value="<%= event.taskList %>"required />
         <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]">
+        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]" value="<%= event.isDoneList %>">
           <option value="false" selected>No</option>
           <option value="true">Yes</option>
         </select>

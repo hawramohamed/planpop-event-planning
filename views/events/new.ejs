@@ -13,7 +13,7 @@
     <input type="text" name="title" id="title" required />
 
     <label for="date">Date:</label>
-    <input type="date" name="date" id="date" required />
+    <input type="text" name="date" id="date" required />
 
     <label for="location">Location:</label>
     <input type="text" name="location" id="location" required />
@@ -28,13 +28,7 @@
 
     <div id="checklist-container">
       <div class="checklist-group">
-        <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[0][task]" required />
-        <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[0][isDone]">
-          <option value="false" selected>No</option>
-          <option value="true">Yes</option>
-        </select>
+        
       </div>
     </div>
     <button type="button" onclick="addChecklistItem()">+ Add Another Task</button>
@@ -55,7 +49,7 @@
         <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" required />
         <label>Is Done?</label>
         <select name="isDoneList" id="checklist[${checklistIndex}][isDone]">
-          <option value="false" selected>No</option>
+          <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
       `;
