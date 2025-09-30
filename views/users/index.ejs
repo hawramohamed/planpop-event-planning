@@ -10,7 +10,11 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Other Users</h1>
-
+    <% if (user) { %>
+        <p>Welcome, <%= user.username %>!</p>
+    <% } else { %>
+        <p>Welcome, guest!</p>
+    <% } %>
     <ul>
         <% users.forEach(user => { %>
         <li>

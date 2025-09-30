@@ -52,14 +52,12 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
-app.use(passUserToView);
 app.use('/auth', authController);
-app.use(isSignedIn);
 app.use('/users', usersController);
 
 
 // PROTECTED
-app.use('/users/:userId/events', eventController);
+app.use('/users/:userId/events', isSignedIn, eventController);
 
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}!`);
