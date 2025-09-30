@@ -22,7 +22,7 @@ h1, h2, h3 {
   text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000;
 }
 
-h1::before {
+h1::after {
   content: "🌟 ";
   color: #ffd700;
 }
@@ -32,6 +32,19 @@ p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #333;
+}
+
+/* links */
+a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700, 0 0 10px #000;
 }
 
 
@@ -79,7 +92,7 @@ nav a:hover {
   animation: sparkle 2s infinite ease-in-out;
 }
 
-/* nav bar anim */
+/* anim */
 @keyframes bounceIn {
   0% {
     transform: scale(0.8);
@@ -102,6 +115,17 @@ nav a:hover {
   50% {
     text-shadow: 0 0 15px #ffd700, 0 0 5px #000;
     transform: rotate(2deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -165,6 +189,14 @@ body {
   }
 
   nav a {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
     font-size: 1rem;
   }
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 <%- include('./partials/_navbar.ejs') %> 
-
+<div class = "home-wrapper">
 <% if (user) { %>
 <h1>Welcome to PlanPop, <%= user.username %>!</h1>
 <p>Your space to plan, polish, and pop off with unforgettable events.</p>
@@ -20,7 +20,7 @@
   <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">Sign in</a>.
 </p>
 <% } %>
-
+</div>
 
 </body>
 </html>
