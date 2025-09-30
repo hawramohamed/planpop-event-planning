@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Sign In!</h1>
-    <form action="/auth/sign-in" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" />
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="signin-body">
+      <h1 class ="no-star"> Ready to Pop Back in? </h1>
+      <div class = "signin-form-wrapper">
+        <form action="/auth/sign-in" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
-
-      <button type="submit">Sign in</button>
-    </form>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

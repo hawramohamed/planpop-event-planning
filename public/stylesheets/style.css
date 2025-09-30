@@ -11,7 +11,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5f5f5;
   color: #222;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 /* Headings */
@@ -26,6 +27,34 @@ h1::after {
   content: "🌟 ";
   color: #ffd700;
 }
+
+h1.no-star::after{
+    content:"";
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  border: 3px solid #ffd700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 10px #ffd700, 0 0 5px #000;
+  transform: scale(1.05);
+}
+
 
 /* paragraphs */
 p {
@@ -167,8 +196,97 @@ nav a:hover {
   margin-bottom: 0.3rem;
 }
 
+/* signin css */
+.lock-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 2.5rem;
+  animation: glowLock 1.5s infinite ease-in-out;
+}
+
+.signin-body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fffacd, #ffd700);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    overflow: hidden;
+    
+}
+
+.signin-body h1{
+    font-size: 3.rem;
+    margin-bottom: 1.5rem;
+}
+
+.signin-form-wrapper{
+    background-color: #fff;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    
+
+}
+
+.signin-form-wrapper label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #000;
+    
+}
+
+.signin-form-wrapper input{
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: insert 2px 2px 0 #ffd700;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signin-form-wrapper input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 5px #ffd700;
+}
 
 
+.signin-form-wrapper button{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
 
 /* responsive */
 @media (max-width: 768px) {
@@ -224,6 +342,39 @@ nav a:hover {
     font-size: 1rem;
   }
 
+.signin-body {
+    padding: 1rem;
+    box-shadow: none;
+    border-width: 2px;
+  }
+
+  .signin-body h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    text-align: center;
+  }
+
+  .signin-form-wrapper {
+    padding: 1.5rem;
+    max-width: 90%;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .signin-form-wrapper label {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .signin-form-wrapper input {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .signin-form-wrapper button {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
   
 }
 
@@ -236,4 +387,27 @@ nav a:hover {
   .home-wrapper a {
     font-size: 0.95rem;
   }
+
+  .signin-body h1 {
+    font-size: 1.8rem;
+  }
+
+  .signin-form-wrapper {
+    padding: 1rem;
+    border-width: 2px;
+  }
+
+  .signin-form-wrapper input,
+  .signin-form-wrapper button {
+    font-size: 0.9rem;
+  }
+
+  .signin-form-wrapper label {
+    font-size: 0.95rem;
+  }
+
+  .lock-icon {
+    font-size: 2rem;
+  }
+
 }
