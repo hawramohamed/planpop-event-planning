@@ -32,12 +32,13 @@
     <h3>Checklist Item </h3>
 
     <div id="checklist-container">
+      <% event.checklist.forEach((item, idx) => { %>
       <div class="checklist-group">
         <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[0][task]" value="<%= event.taskList %>" required />
+        <input type="text" name="taskList" id="checklist[0][task]" value="<%= item.task %>" required />
         <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[0][isDone]" value="<%= event.isDoneList %>">
-          <% if (!event.isDone) { %>
+        <select name="isDoneList" id="checklist[0][isDone]" value="<%= item.isDone %>">
+          <% if (!item.isDone) { %>
           <option value="false" selected>No</option>
           <option value="true">Yes</option>
           <% } else { %>
@@ -46,6 +47,7 @@
           <% } %>
         </select>
       </div>
+      <% }); %>
     </div>
     <button type="button" onclick="addChecklistItem()">+ Add Another Task</button>
 
@@ -54,7 +56,7 @@
 
 <!-- to dynamically add fields in checklist-->
 <script>
-    let checklistIndex = 1;
+    let checklistIndex = <%= event.checklist.length %>;
 
     function addChecklistItem() {
       const container = document.getElementById('checklist-container');
