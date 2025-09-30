@@ -11,38 +11,39 @@
     <a href="/users/<%= user._id %>/events/new">Create new event</a>
     
     <% if (events.length > 0){ %>
-        <ul>
-           <% events.forEach(item => { %>
+      <ul>
+        <% events.forEach(item => { %>
+            <li>
+              <strong><%= item.title %></strong> — <%= item.location %><br/>
+              Date: <%= item.date ? item.date.toISOString().split('T')[0] : 'No date set' %><br/>
+              Public: <%= item.isPublic ? 'Yes' : 'No' %><br/>
+            </li>
+
+            <% if (item.checklist && item.checklist.length > 0) { %>
+              <ul>
+                <% item.checklist.forEach(task => { %>
                   <li>
-                    <strong><%= item.title %></strong> — <%= item.location %><br/>
-                    Date: <%= item.date ? item.date : 'No date set' %><br/>
-                    Public: <%= item.isPublic ? 'Yes' : 'No' %><br/>
-                  </li>
-
-                <% if (item.checklist && item.checklist.length > 0) { %>
-                  <ul>
-                  <% item.checklist.forEach(task => { %>
-                    <li>
                     <%= task.task %> — <%= task.isDone ? 'Done' : 'Pending' %>
-                    </li>
-                  <% }) %>
-                  </ul>
-                <% } else { %>
-                  <em>No checklist items</em>
-                <% } %>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } else { %>
+              <em>No checklist items</em>
+              <br />
+            <% } %>
               
+            <br />
+            <a href="/users/<%= user._id %>/events/<%= item._id %>/edit">Edit</a>
 
-        <a href="/users/<%= user._id %>/events/<%= item._id %>/edit">Edit</a>
-
-        <form action="/users/<%= user._id %>/events/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
-          <button type="submit">Delete</button>
-        </form>
-      </li>
-    <% }); %>
-  </ul>
-<% } else { %>
-  <p>There are no events created.</p>
-<% } %>
+            <form action="/users/<%= user._id %>/events/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+          
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>There are no events created.</p>
+    <% } %>
 
 
 

@@ -7,13 +7,13 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit event.title </h1>
+    <h1>Editing <%= event.title %> </h1>
     <form action="/users/<%= user._id %>/events/<%= event._id %>?_method=PUT" method="POST">
     <label for="title">Event Title:</label>
     <input type="text" name="title" id="title" value="<%= event.title %>" required />
 
     <label for="date">Date:</label>
-    <input type="text" name="date" id="date" value="<%= event.date %>" required />
+    <input type="date" name="date" id="date" value="<%= event.date.toISOString().split('T')[0] %>" min="<%= new Date().toISOString().split('T')[0] %>" required />
 
     <label for="location">Location:</label>
     <input type="text" name="location" id="location" value="<%= event.location %>" required />
