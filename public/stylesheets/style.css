@@ -174,12 +174,44 @@ nav a:hover {
 
 
 /* event index */
+.events-wrapper {
+  padding: 2rem;
+  background: linear-gradient(135deg, #fffacd, #ffd700);
+  min-height: calc(100vh - 70px); /* subtract navbar height */
+  border: 3px solid #000;
+  box-shadow: 5px 5px 0 #000;
+}
+
+.events-wrapper h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.events-wrapper a {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.events-wrapper a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700, 0 0 10px #000;
+}
+
 .event-item {
   background-color: #fff;
   border: 2px solid #000;
   padding: 1rem;
   margin-bottom: 2rem;
   box-shadow: 3px 3px 0 #ffd700;
+  border-radius: 8px;
 }
 
 .event-item strong {
@@ -194,10 +226,16 @@ nav a:hover {
 
 .checklist li {
   margin-bottom: 0.3rem;
+  font-size: 0.95rem;
 }
 
+.event-item form {
+  display: inline;
+}
+
+
 .event-item button{
-   margin-top: 1rem;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 0.7rem;
     font-weight: bold;
@@ -211,6 +249,36 @@ nav a:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
+.event-item button:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 10px #ffd700, 0 0 5px #000;
+}
+
+a.button-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #ffd700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 2px 2px 0 #ffd700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.button-link:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 10px #ffd700, 0 0 5px #000;
+}
+
 
 /* signin css */
 .signin-body{
@@ -386,11 +454,26 @@ nav a:hover {
 
 /* responsive */
 @media (max-width: 768px) {
+  .events-wrapper {
+    padding: 1.5rem;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .events-wrapper h1 {
+    font-size: 2rem;
+  }
+
+
   .event-item {
     padding: 1rem;
-    font-size: 0.95rem;
   }
   
+  .event-item button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
 
   button {
     width: 100%;
@@ -438,7 +521,7 @@ nav a:hover {
     font-size: 1rem;
   }
 
-.signin-body {
+  .signin-body {
     padding: 1rem;
     box-shadow: none;
     border-width: 2px;
@@ -507,6 +590,22 @@ nav a:hover {
 }
 
 @media (max-width: 480px) {
+  .events-wrapper h1{
+    font-size: 1.6rem;
+  }
+
+  .event-item strong {
+    font-size: 1rem;
+  }
+
+  .checklist li {
+    font-size: 0.9rem;
+  }
+
+  .event-item button{
+    font-size: 0.85rem;
+  }
+
   .home-wrapper h1 {
     font-size: 1.6rem;
   }
