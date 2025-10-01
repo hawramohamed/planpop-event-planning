@@ -197,13 +197,6 @@ nav a:hover {
 }
 
 /* signin css */
-.lock-icon {
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-size: 2.5rem;
-  animation: glowLock 1.5s infinite ease-in-out;
-}
-
 .signin-body{
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #fffacd, #ffd700);
@@ -272,6 +265,92 @@ nav a:hover {
 
 
 .signin-form-wrapper button{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
+
+
+/* signup css */
+.signup-body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fffacd, #ffd700);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    overflow: hidden;
+    
+}
+
+.signup-body h1{
+    font-size: 3.rem;
+    margin-bottom: 1.5rem;
+}
+
+.signup-form-wrapper{
+    background-color: #fff;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    
+
+}
+
+.signup-form-wrapper label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #000;
+    
+}
+
+.signup-form-wrapper input{
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: insert 2px 2px 0 #ffd700;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-form-wrapper input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 5px #ffd700;
+}
+
+
+.signup-form-wrapper button{
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -409,5 +488,5 @@ nav a:hover {
   .lock-icon {
     font-size: 2rem;
   }
-
+       
 }
