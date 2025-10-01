@@ -196,6 +196,22 @@ nav a:hover {
   margin-bottom: 0.3rem;
 }
 
+.event-item button{
+   margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* signin css */
 .signin-body{
     font-family: 'Segoe UI', sans-serif;
@@ -213,7 +229,7 @@ nav a:hover {
 }
 
 .signin-body h1{
-    font-size: 3.rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
 }
 
@@ -455,7 +471,39 @@ nav a:hover {
     margin-top: 1rem;
   }
 
-  
+  .signup-body {
+    padding: 1rem;
+    box-shadow: none;
+    border-width: 2px;
+  }
+
+  .signup-body h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    text-align: center;
+  }
+
+  .signup-form-wrapper {
+    padding: 1.5rem;
+    max-width: 90%;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .signup-form-wrapper label {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .signup-form-wrapper input {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .signup-form-wrapper button {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -486,8 +534,24 @@ nav a:hover {
     font-size: 0.95rem;
   }
 
-  .lock-icon {
-    font-size: 2rem;
+    .signup-body h1 {
+    font-size: 1.8rem;
   }
+
+  .signup-form-wrapper {
+    padding: 1rem;
+    border-width: 2px;
+  }
+
+  .signup-form-wrapper input,
+  .signup-form-wrapper button {
+    font-size: 0.9rem;
+  }
+
+  .signup-form-wrapper label {
+    font-size: 0.95rem;
+  }
+
+
        
 }
