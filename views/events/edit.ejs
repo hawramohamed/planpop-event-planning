@@ -34,22 +34,25 @@
 
     <div id="checklist-container">
       <% event.checklist.forEach((item, idx) => { %>
-      <div class="checklist-group">
+        <div class="checklist-group">
         <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[0][task]" value="<%= item.task %>" required />
+        <input type="text" name="taskList" id="checklist[<%= idx %>][task]" value="<%= item.task %>" required />
+
         <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[0][isDone]" value="<%= item.isDone %>">
+        <select name="isDoneList" id="checklist[<%= idx %>][isDone]">
           <% if (!item.isDone) { %>
-          <option value="false" selected>No</option>
-          <option value="true">Yes</option>
+            <option value="false" selected>No</option>
+            <option value="true">Yes</option>
           <% } else { %>
-          <option value="false">No</option>
-          <option value="true" selected>Yes</option>
+            <option value="false">No</option>
+            <option value="true" selected>Yes</option>
           <% } %>
         </select>
-      </div>
-      <% }); %>
+
+      <button type="button" class="remove-task" onclick="removeChecklistItem(this)">🗑️</button>
     </div>
+  <% }); %>
+</div>
     <button type="button" onclick="addChecklistItem()">+ Add Another Task</button>
 
     <button type="submit">Save Edited Event</button>
@@ -65,15 +68,21 @@
       group.className = 'checklist-group';
       group.innerHTML = `
         <label>Task:</label>
-        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" value="<%= event.taskList %>"required />
+        <input type="text" name="taskList" id="checklist[${checklistIndex}][task]" required />
         <label>Is Done?</label>
-        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]" value="<%= event.isDoneList %>">
-          <option value="false" selected>No</option>
+        <select name="isDoneList" id="checklist[${checklistIndex}][isDone]">
+          <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
+        <button type="button" class= "remove-task" onclick="removeChecklistItem(this)">🗑️</button>
       `;
       container.appendChild(group);
       checklistIndex++;
+    }
+
+    function removeChecklistItem(button) {
+      const group = button.parentElement;
+      group.remove();
     }
   </script>
 

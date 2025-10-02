@@ -8,6 +8,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="new-event-wrapper">
     <h1>Create a New Event</h1>
     <form action="/users/<%= user._id %>/events" method="POST">
     <label for="title">Event Title:</label>
@@ -36,7 +37,7 @@
 
     <button type="submit">Save Item</button>
 </form>
-
+</div>
 <!-- to dynamically add fields in checklist-->
 <script>
     let checklistIndex = 1;
@@ -53,9 +54,15 @@
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
+        <button type="button" class= "remove-task" onclick="removeChecklistItem(this)">🗑️</button>
       `;
       container.appendChild(group);
       checklistIndex++;
+    }
+
+    function removeChecklistItem(button) {
+      const group = button.parentElement;
+      group.remove();
     }
   </script>
 
