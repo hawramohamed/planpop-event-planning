@@ -9,41 +9,45 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= selectedUser.username %>'s Events</h1>
-    <% if (!user) { %>
-      <p>You are viewing public events as a guest.</p>
-    <% } %>
+    <div class ="show-events-wrapper">
+      <h1><%= selectedUser.username %>'s Events</h1>
+      <% if (!user) { %>
+        <p>You are viewing public events as a guest.</p>
+      <% } %>
 
-    <% if (events.length > 0){ %>
-      <ul>
-        <% events.forEach(item => { %>
-            <li>
-              <strong><%= item.title %></strong> — <%= item.location %><br/>
-              Date: <%= item.date ? item.date.toISOString().split('T')[0] : 'No date set' %><br/>
-              Public: <%= item.isPublic ? 'Yes' : 'No' %><br/>
-            </li>
+      <% if (events.length > 0){ %>
+        <ul>
+          <% events.forEach(item => { %>
+              <li>
+                <strong><%= item.title %></strong> — <%= item.location %><br/>
+                Date: <%= item.date ? item.date.toISOString().split('T')[0] : 'No date set' %><br/>
+                Public: <%= item.isPublic ? 'Yes' : 'No' %><br/>
+              </li>
 
-            <% if (item.checklist && item.checklist.length > 0) { %>
-              <ul>
-                <% item.checklist.forEach(task => { %>
-                  <li>
-                    <%= task.task %> — <%= task.isDone ? 'Done' : 'Pending' %>
-                  </li>
-                <% }) %>
-              </ul>
-            <% } else { %>
-              <em>No checklist items</em>
-              <br />
-            <% } %>
+              <h3>Checklist Items</h3>
+
+              <% if (item.checklist && item.checklist.length > 0) { %>
+                <ul>
+                  <% item.checklist.forEach(task => { %>
+                    <li>
+                      <%= task.task %> — <%= task.isDone ? 'Done' : 'Pending' %>
+                    </li>
+                  <% }) %>
+                </ul>
+              <% } else { %>
+                <em>No checklist items</em>
+                <br />
+              <% } %>
               
-            <br />
+              <br />
           
-        <% }); %>
-      </ul>
-    <% } else { %>
-      <p>There are no events created.</p>
-    <% } %>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>There are no events created.</p>
+      <% } %>
 
-<a href="/users"> Back to Community</a>
+      <a href="/users"> Back to Community</a>
+    </div>
 </body>
 </html>
