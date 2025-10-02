@@ -24,15 +24,25 @@ PlanPop makes organizing events simple, stylish, and stress-free. Whether you're
 - Basic authentication flow
 
 ## Getting Started
-
+Unable to deploy project due to technical issues. Plan linked in Table of Contents.
 
 ## Attributions
+Dynamic Checklist: 
+- <a>https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener <a>
+- <a>https://stackoverflow.com/questions/46188335/how-to-add-event-listener-to-a-dynamically-created-checkbox-and-check-if-checkbo</a>
 
 
 ## Technologies Used
-
+- JavaScript
+- EJS/Express
+- CSS
 
 ## Next Steps
+- Improve the "Other Users" page by including profile pictures.
+- Visually show task completion with a progress bar or an animated percentage. 
+- Introduce dark mode.
+- Have ready made checklist templates for common events.
+- Have event reminders.
 
 
 ## Planning 
