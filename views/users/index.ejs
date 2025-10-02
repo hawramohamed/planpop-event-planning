@@ -9,18 +9,20 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Other Users</h1>
-    <% if (!user) { %>
-        <p>Welcome, guest!</p>
-    <% } else { %>
-        <p>Welcome, <%= user.username %>!</p>
-    <% } %>
-    <ul>
-        <% users.forEach(otherUser => { %>
-        <li>
-        <a href="/users/<%= otherUser._id %>"><%= otherUser.username %></a>
-        </li>
-        <% }) %>
-    </ul>
+    <div class ="community-wrapper">
+        <h1>Other Users</h1>
+        <% if (!user) { %>
+            <p>Welcome, guest!</p>
+        <% } else { %>
+            <p>Welcome, <%= user.username %>!</p>
+        <% } %>
+        <ul>
+            <% users.forEach(otherUser => { %>
+                <li>
+                    <a href="/users/<%= otherUser._id %>"><%= otherUser.username %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 </body>
 </html>
