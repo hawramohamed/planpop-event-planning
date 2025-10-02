@@ -6,7 +6,7 @@ const User = require('../models/user.js');
 router.get('/', async (req, res) => {
   try {
     const allUsers = await User.find({});
-    res.render('users/index.ejs', { users: allUsers, user: req.user });
+    res.render('users/index.ejs', { users: allUsers, user: req.session.user });
   } catch (error) {
     console.log(error);
     res.redirect('/');
@@ -21,7 +21,7 @@ router.get('/:userId', async (req, res) => {
         return req.user || event.isPublic;
       });
 
-      res.render('users/show.ejs', {selectedUser, events: filteredEvents, user: req.user});
+      res.render('users/show.ejs', {selectedUser, events: filteredEvents, user: req.session.user});
     } catch (error){
       console.log(error);
       res.redirect('/');

@@ -10,15 +10,15 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Other Users</h1>
-    <% if (user) { %>
-        <p>Welcome, <%= user.username %>!</p>
-    <% } else { %>
+    <% if (!user) { %>
         <p>Welcome, guest!</p>
+    <% } else { %>
+        <p>Welcome, <%= user.username %>!</p>
     <% } %>
     <ul>
-        <% users.forEach(user => { %>
+        <% users.forEach(otherUser => { %>
         <li>
-        <a href="/users/<%= user._id %>"><%= user.username %></a>
+        <a href="/users/<%= otherUser._id %>"><%= otherUser.username %></a>
         </li>
         <% }) %>
     </ul>
