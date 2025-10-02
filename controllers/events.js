@@ -35,9 +35,6 @@ router.post('/', async (req, res) =>{
     const currentUser = await User.findById(req.session.user._id);
     const taskList = req.body.taskList
     const isDoneList = req.body.isDoneList
-    
-    console.log(req.body.taskList);
-    console.log(req.body.isDoneList);
 
     // first check if there is a task
     let checklistArray = [];
